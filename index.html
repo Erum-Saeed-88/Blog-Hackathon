@@ -126,7 +126,7 @@ referrerpolicy="no-referrer" />
     gridContainer.appendChild(cardCol);
   });
 
-  // Detail button click pe modal open karo
+
   gridContainer.addEventListener('click', function(e) {
     if (e.target.classList.contains('detail-btn')) {
       const productId = parseInt(e.target.getAttribute('data-id'));
@@ -143,11 +143,9 @@ referrerpolicy="no-referrer" />
 
       document.getElementById('modalRatingNum').textContent = selectedProduct.rating;
       
-      // Stars generate karo (simple tareeqa)
       const stars = '★'.repeat(Math.floor(selectedProduct.rating)) + '☆'.repeat(5 - Math.floor(selectedProduct.rating));
       document.getElementById('modalRating').textContent = stars;
 
-        // Bootstrap modal show karo
         const modalElement = document.getElementById('productModal');
         const myModal = new bootstrap.Modal(modalElement);
         myModal.show();
